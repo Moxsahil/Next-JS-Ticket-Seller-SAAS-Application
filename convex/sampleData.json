@@ -1,0 +1,92 @@
+[
+    {
+        "name": "RCB vs Hyderabad",
+        "description": "Match No 65",
+        "date": "2025-05-23",
+        "time": "19:30",
+        "price": 1000,
+        "totalTickets": 1000,
+        "location": "M.Chinnaswamy Stadium, Bangalore"
+    },
+    {
+        "name": "Arijit Singh Live Concert",
+        "description": "Musical Night with Arijit Singh",
+        "date": "2025-06-10",
+        "time": "18:00",
+        "price": 2500,
+        "totalTickets": 5000,
+        "location": "NSCI Dome, Mumbai"
+    },
+    {
+        "name": "Tech Innovators Summit",
+        "description": "Annual Technology Conference",
+        "date": "2025-07-15",
+        "time": "09:00",
+        "price": 1500,
+        "totalTickets": 800,
+        "location": "BIEC, Bangalore"
+    },
+    {
+        "name": "Stand-up Comedy Night",
+        "description": "Laugh Riot with Zakir Khan",
+        "date": "2025-08-05",
+        "time": "20:00",
+        "price": 800,
+        "totalTickets": 1200,
+        "location": "Siri Fort Auditorium, Delhi"
+    },
+    {
+        "name": "Startup Pitch Fest",
+        "description": "Pitch your startup to investors",
+        "date": "2025-09-12",
+        "time": "10:00",
+        "price": 500,
+        "totalTickets": 300,
+        "location": "T-Hub, Hyderabad"
+    },
+    {
+        "name": "Art & Craft Expo",
+        "description": "Exhibition of local artists and craftsmen",
+        "date": "2025-10-20",
+        "time": "11:00",
+        "price": 200,
+        "totalTickets": 2000,
+        "location": "Kala Academy, Goa"
+    },
+    {
+        "name": "Food Carnival",
+        "description": "Taste cuisines from around the world",
+        "date": "2025-11-05",
+        "time": "12:00",
+        "price": 300,
+        "totalTickets": 2500,
+        "location": "Salt Lake Stadium, Kolkata"
+    },
+    {
+        "name": "Yoga & Wellness Retreat",
+        "description": "A day of yoga, meditation, and wellness",
+        "date": "2025-12-01",
+        "time": "07:00",
+        "price": 1200,
+        "totalTickets": 400,
+        "location": "Isha Yoga Center, Coimbatore"
+    },
+    {
+        "name": "Children's Science Fair",
+        "description": "Interactive science exhibits for kids",
+        "date": "2025-12-15",
+        "time": "10:00",
+        "price": 100,
+        "totalTickets": 1500,
+        "location": "Birla Science Museum, Hyderabad"
+    },
+    {
+        "name": "New Year Gala Night",
+        "description": "Celebrate New Year with music and dance",
+        "date": "2025-12-31",
+        "time": "21:00",
+        "price": 3000,
+        "totalTickets": 3500,
+        "location": "Taj Palace, Delhi"
+    }
+]
