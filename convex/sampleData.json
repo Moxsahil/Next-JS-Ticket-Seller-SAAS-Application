@@ -1,92 +1,93 @@
 [
     {
-        "name": "RCB vs Hyderabad",
-        "description": "Match No 65",
-        "date": "2025-05-23",
-        "time": "19:30",
-        "price": 1000,
-        "totalTickets": 1000,
-        "location": "M.Chinnaswamy Stadium, Bangalore"
+      "name": "Taylor Swift | The Eras Tour",
+      "description": "Experience Taylor Swift's record-breaking Eras Tour live!",
+      "price": 499.99,
+      "totalTickets": 100,
+      "location": "MetLife Stadium, New Jersey", 
+      "eventDate": 1723845600000,
+      "userId": "user_2bFMHkGxZPWVVyJ5QEJQxfsCkxB"
     },
     {
-        "name": "Arijit Singh Live Concert",
-        "description": "Musical Night with Arijit Singh",
-        "date": "2025-06-10",
-        "time": "18:00",
-        "price": 2500,
-        "totalTickets": 5000,
-        "location": "NSCI Dome, Mumbai"
+      "name": "NBA Finals 2024 - Game 1",
+      "description": "Witness the opening game of the NBA Finals!",
+      "price": 899.99,
+      "totalTickets": 50,
+      "location": "Madison Square Garden, New York",
+      "eventDate": 1717891200000,
+      "userId": "user_2bFMHkGxZPWVVyJ5QEJQxfsCkxB"
     },
     {
-        "name": "Tech Innovators Summit",
-        "description": "Annual Technology Conference",
-        "date": "2025-07-15",
-        "time": "09:00",
-        "price": 1500,
-        "totalTickets": 800,
-        "location": "BIEC, Bangalore"
+      "name": "Hamilton - Broadway",
+      "description": "Don't miss the award-winning musical phenomenon!",
+      "price": 299.99,
+      "totalTickets": 75,
+      "location": "Richard Rodgers Theatre, New York",
+      "eventDate": 1721788200000,
+      "userId": "user_2dOPKmMyZRXXazL7SGLSzhsEmzD"
     },
     {
-        "name": "Stand-up Comedy Night",
-        "description": "Laugh Riot with Zakir Khan",
-        "date": "2025-08-05",
-        "time": "20:00",
-        "price": 800,
-        "totalTickets": 1200,
-        "location": "Siri Fort Auditorium, Delhi"
+      "name": "Coldplay World Tour",
+      "description": "Join Coldplay for an unforgettable night of music!",
+      "price": 150.00,
+      "totalTickets": 200,
+      "location": "Wembley Stadium, London",
+      "eventDate": 1726012800000,
+      "userId": "user_2dOPKmMyZRXXazL7SGLSzhsEmzD"
     },
     {
-        "name": "Startup Pitch Fest",
-        "description": "Pitch your startup to investors",
-        "date": "2025-09-12",
-        "time": "10:00",
-        "price": 500,
-        "totalTickets": 300,
-        "location": "T-Hub, Hyderabad"
-    },
-    {
-        "name": "Art & Craft Expo",
-        "description": "Exhibition of local artists and craftsmen",
-        "date": "2025-10-20",
-        "time": "11:00",
-        "price": 200,
-        "totalTickets": 2000,
-        "location": "Kala Academy, Goa"
-    },
-    {
-        "name": "Food Carnival",
-        "description": "Taste cuisines from around the world",
-        "date": "2025-11-05",
-        "time": "12:00",
-        "price": 300,
-        "totalTickets": 2500,
-        "location": "Salt Lake Stadium, Kolkata"
-    },
-    {
-        "name": "Yoga & Wellness Retreat",
-        "description": "A day of yoga, meditation, and wellness",
-        "date": "2025-12-01",
-        "time": "07:00",
-        "price": 1200,
-        "totalTickets": 400,
-        "location": "Isha Yoga Center, Coimbatore"
-    },
-    {
-        "name": "Children's Science Fair",
-        "description": "Interactive science exhibits for kids",
-        "date": "2025-12-15",
-        "time": "10:00",
-        "price": 100,
-        "totalTickets": 1500,
-        "location": "Birla Science Museum, Hyderabad"
-    },
-    {
-        "name": "New Year Gala Night",
-        "description": "Celebrate New Year with music and dance",
-        "date": "2025-12-31",
-        "time": "21:00",
-        "price": 3000,
-        "totalTickets": 3500,
-        "location": "Taj Palace, Delhi"
+      "name": "Comic Con 2024",
+      "description": "The ultimate pop culture convention!",
+      "price": 85.00,
+      "totalTickets": 1000,
+      "location": "Javits Center, New York",
+      "eventDate": 1728172800000,
+      "userId": "user_2dOPKmMyZRXXazL7SGLSzhsEmzD"
     }
-]
+    ,
+    {
+      "name": "Ed Sheeran Mathematics Tour",
+      "description": "An intimate evening with Ed Sheeran performing his greatest hits",
+      "price": 125.00,
+      "totalTickets": 150,
+      "location": "O2 Arena, London",
+      "eventDate": 1729382400000,
+      "userId": "user_2eRTLnPxYQWWbzM8THMTaisFnzE"
+    },
+    {
+      "name": "Premier League: Arsenal vs Manchester United",
+      "description": "A classic Premier League rivalry match at the Emirates",
+      "price": 199.99,
+      "totalTickets": 60,
+      "location": "Emirates Stadium, London",
+      "eventDate": 1722393600000,
+      "userId": "user_2fQUMpNzXSVVczN9UINUbjsGozF"
+    },
+    {
+      "name": "Adele: Weekend with Adele",
+      "description": "Adele's spectacular Las Vegas residency show",
+      "price": 450.00,
+      "totalTickets": 80,
+      "location": "Caesars Palace, Las Vegas",
+      "eventDate": 1724985600000,
+      "userId": "user_2gPVNqOyYTWWdzO0VJOVcktHpzG"
+    },
+    {
+      "name": "Wimbledon 2024 - Men's Final",
+      "description": "The culmination of the world's most prestigious tennis tournament",
+      "price": 750.00,
+      "totalTickets": 40,
+      "location": "Centre Court, All England Club, London",
+      "eventDate": 1720578600000,
+      "userId": "user_2hQWOrPzZUXXezP1WKPWdluIqzH"
+    },
+    {
+      "name": "Harry Potter and the Cursed Child",
+      "description": "The eighth story in the Harry Potter series comes to life on stage",
+      "price": 175.00,
+      "totalTickets": 100,
+      "location": "Palace Theatre, London",
+      "eventDate": 1727222400000,
+      "userId": "user_2iRXPsQAaVYYfAQ2XLQXemvJrzI"
+    }
+  ]

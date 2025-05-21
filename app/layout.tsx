@@ -2,6 +2,12 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
+import { ConvexProviderWithClerk } from "convex/react-clerk";
+import { useAuth } from "@clerk/clerk-react";
+import { ConvexReactClient } from "convex/react";
+import { ConvexClientProvider } from "@/components/ConvexClientProvider";
+import Header from "@/components/Header";
+import SyncUserWithConvex from "@/components/SyncUserWithConvex";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -12,6 +18,8 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+// const convex = new ConvexReactClient(process.env.NEXT_PUBLIC_CONVEX_URL!)
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -28,9 +36,15 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <ConvexClientProvider>
         <ClerkProvider>
-        {children}
+          <Header />
+          <SyncUserWithConvex />
+            {/* <ConvexProviderWithClerk client={convex} useAuth={useAuth}> */}
+              {children}
+            {/* </ConvexProviderWithClerk> */}
         </ClerkProvider>
+        </ConvexClientProvider>
       </body>
     </html>
   );
