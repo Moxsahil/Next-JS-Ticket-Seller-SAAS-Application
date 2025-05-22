@@ -1,7 +1,24 @@
 import { query, mutation, internalMutation } from "./_generated/server";
-import { ConvexError, v } from "convex/values";
+import { v } from "convex/values";
 import { DURATIONS, TICKET_STATUS, WAITING_LIST_STATUS } from "./constants";
 import { internal } from "./_generated/api";
+import { Id } from "./_generated/dataModel";
+
+function groupByEvent(
+    offers: Array<{ eventId: Id<"events">; _id: Id<"waitingList"> }>
+  ) {
+    return offers.reduce(
+      (acc, offer) => {
+        const eventId = offer.eventId;
+        if (!acc[eventId]) {
+          acc[eventId] = [];
+        }
+        acc[eventId].push(offer);
+        return acc;
+      },
+      {} as Record<Id<"events">, typeof offers>
+    );
+}
 
 export const getQueuePosition = query({
     args: {
@@ -128,4 +145,52 @@ export const expireOffer = internalMutation({
 
         // await processQueue(ctx, { eventId });
     },
+})
+
+export const releaseTicket = mutation({
+    args: {
+        eventId: v.id("events"),
+        waitingListId: v.id("waitingList")
+    },
+    handler: async (ctx, {eventId, waitingListId}) => {
+        const entry = await ctx.db.get(waitingListId);
+
+        if(!entry || entry.status !== WAITING_LIST_STATUS.OFFERED){
+            throw new Error("No valid ticket offer found")
+        }
+
+        await ctx.db.patch(waitingListId, {
+            status: WAITING_LIST_STATUS.EXPIRED,
+        });
+
+        // await processQueue(ctx, {eventId});
+    }
+})
+
+export const cleanUpExpiredOffers = internalMutation({
+    args: {},
+    handler: async (ctx) => {
+        const now = Date.now();
+
+        const expiredOffers = await ctx.db
+        .query("waitingList")
+        .filter((q) => 
+        q.and(
+            q.eq(q.field("status"), WAITING_LIST_STATUS.OFFERED),
+            q.lt(q.field("offerExpiresAt"), now)
+        ))
+        .collect();
+
+        const grouped = groupByEvent(expiredOffers);
+
+        for(const [eventId, offers] of Object.entries(grouped)){
+            await Promise.all(
+                offers.map((offer) => 
+                ctx.db.patch(offer._id, {
+                    status: WAITING_LIST_STATUS.EXPIRED,
+                }))
+            );
+            // await processQueue(ctx, { eventId: eventId as Id<"events">})
+        };
+    }
 })

@@ -11,6 +11,7 @@ import { CalendarDays, MapPin, Ticket, Users } from "lucide-react"
 import Spinner from "@/components/Spinner";
 import EventCard from "@/components/EventCard";
 import JoinQueue from "@/components/JoinQueue";
+import { Button } from "@/components/ui/button";
 
 export default function EventPage(){
 
@@ -124,9 +125,9 @@ export default function EventPage(){
                                         )
                                         : (
                                             <SignInButton>
-                                                <button className="w-full bg-gradient-to-r from-blue-600 to-blue-800 hover:from-orange-600 hover:to-orange-700 text-white font-medium py-2 px-4 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg">
+                                                <Button className="w-full bg-gradient-to-r from-blue-600 to-blue-800 hover:from-orange-600 hover:to-orange-700 text-white font-medium py-2 px-4 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg">
                                                     Sign in to buy tickets
-                                                </button>
+                                                </Button>
                                             </SignInButton>
                                         )}
                                 </div>

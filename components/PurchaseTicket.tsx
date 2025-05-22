@@ -6,7 +6,8 @@ import { useQuery } from "convex/react";
 import { Ticket } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useUser } from "@clerk/nextjs";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import ReleaseTicket from "./ReleaseTicket";
 
 export default function PurchaseTicket({ eventId }: { eventId: Id<"events">}){
     const router = useRouter;
@@ -22,6 +23,32 @@ export default function PurchaseTicket({ eventId }: { eventId: Id<"events">}){
 
     const offerExpiresAt = queuePosition?.offerExpiresAt ?? 0;
     const isExpired = Date.now() > offerExpiresAt;
+
+    useEffect(() => {
+      const calculateTimeRemaining = () => {
+        if(isExpired){
+            setTimeRemaining("Expired");
+            return;
+        }
+
+        const diff = offerExpiresAt - Date.now();
+        const minutes = Math.floor(diff / 1000 / 60);
+        const seconds = Math.floor((diff /1000) % 60);
+
+        if(minutes > 0){
+            setTimeRemaining(
+                `${minutes} minute${minutes === 1 ? "" : "s"} ${seconds} second${seconds === 1 ? "" : "s"}`
+            );
+        } else {
+            setTimeRemaining(`${seconds} second${seconds === 1 ? "" : "s"}`);
+        }
+      };
+
+      calculateTimeRemaining();
+      const interval = setInterval(calculateTimeRemaining, 1000);
+      return () => clearInterval(interval)
+    }, [offerExpiresAt, isExpired])
+    
 
     const handlePurchase = async () => {
         if(!user) return;
@@ -46,14 +73,14 @@ export default function PurchaseTicket({ eventId }: { eventId: Id<"events">}){
                 <div className="bg-white rounded-lg p-6 border border-gray-200">
                     <div className="flex flex-col gap-4">
                         <div className="flex items-center gap-3">
-                            <div className="w-12 h-12 rounded-full bg-amber-100 items-center justify-center">
+                            <div className="w-12 h-12 rounded-full bg-amber-100 flex items-center justify-center">
                                 <Ticket className="w-6 h-6 text-amber-600"/>
                             </div>
                             <div>
-                                <h3>
+                                <h3 className="text-lg font-semibold text-gray-900">
                                     Ticket Reserved
                                 </h3>
-                                <p>
+                                <p className="text-sm text-gray-500">
                                     Expires in {timeRemaining}
                                 </p>
                             </div>
@@ -74,8 +101,8 @@ export default function PurchaseTicket({ eventId }: { eventId: Id<"events">}){
                         ? "Redirecting to checkout..."
                         : "Purchase Your Ticket Now →"}
                 </button>
-                <div>
-                    
+                <div className="mt-4">
+                   <ReleaseTicket eventId= {eventId} waitingListId={queuePosition._id} /> 
                 </div>
             </div>
         </div>
