@@ -1,4 +1,4 @@
-import { Doc} from "./_generated/dataModel";
+import { Doc } from "./_generated/dataModel";
 
 export const DURATIONS = {
     TICKET_OFFER: 30 * 60 * 1000,
