@@ -143,7 +143,7 @@ export const expireOffer = internalMutation({
             status: WAITING_LIST_STATUS.EXPIRED,
         });
 
-        // await processQueue(ctx, { eventId });
+        await processQueue(ctx, { eventId });
     },
 })
 
@@ -163,7 +163,7 @@ export const releaseTicket = mutation({
             status: WAITING_LIST_STATUS.EXPIRED,
         });
 
-        // await processQueue(ctx, {eventId});
+        await processQueue(ctx, {eventId});
     }
 })
 
@@ -190,7 +190,7 @@ export const cleanUpExpiredOffers = internalMutation({
                     status: WAITING_LIST_STATUS.EXPIRED,
                 }))
             );
-            // await processQueue(ctx, { eventId: eventId as Id<"events">})
+            await processQueue(ctx, { eventId: eventId as Id<"events">})
         };
     }
 })
