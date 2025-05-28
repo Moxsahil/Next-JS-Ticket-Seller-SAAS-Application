@@ -8,6 +8,8 @@ import { ConvexReactClient } from "convex/react";
 import { ConvexClientProvider } from "@/components/ConvexClientProvider";
 import Header from "@/components/Header";
 import SyncUserWithConvex from "@/components/SyncUserWithConvex";
+import { ThemeProvider } from "@/components/theme-provider"
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,10 +34,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
         <ConvexClientProvider>
         <ClerkProvider>
           <Header />
@@ -45,6 +48,7 @@ export default function RootLayout({
             {/* </ConvexProviderWithClerk> */}
         </ClerkProvider>
         </ConvexClientProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

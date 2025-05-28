@@ -40,6 +40,9 @@ export async function createStripeConnectCustomer() {
     capabilities: {
       card_payments: { requested: true },
       transfers: { requested: true },
+      amazon_pay_payments: { requested: true},
+      // apple_pay: { requested: true },
+      // google_pay: { requested: true },
     },
   });
 

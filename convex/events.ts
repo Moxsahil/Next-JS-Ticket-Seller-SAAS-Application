@@ -246,6 +246,7 @@ export const purchaseTicket = mutation({
       });
 
       console.log("Processing queue for next person");
+      console.log(" ------------------Process Queue : ", processQueue)
       await processQueue(ctx, { eventId });
 
       console.log("Purchase ticket completed successfully");

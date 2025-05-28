@@ -3,6 +3,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import SearchBar from './SearchBar';
 import logo from "@/Images/logo.png"
+import ThemeToggle from './ThemeSwitcherButton';
+
 
 const Header = () => {
   return (
@@ -37,7 +39,9 @@ const Header = () => {
                 <SearchBar />
             </div>
 
-            <div className="hidden lg:block ml-auto">
+            <div className="hidden lg:flex items-center gap-3 ml-auto">
+                {/* <ThemeToggle /> */}
+                
                 <SignedIn>
                     <div className="flex items-center gap-3">
                         <Link href="/seller">
@@ -68,7 +72,7 @@ const Header = () => {
             <div className="lg:hidden w-full flex justify-center gap-3">
                 <SignedIn>
                     <Link href="/seller" className="flex-1">
-                        <button className="w-full bg-blue-600 text-white px-3 py-1.5 text-sm rounded-lg hover:bg-blue-700 transition">
+                        <button className="w-full bg-blue-600 text-white px-3 py-1.5 text-sm rounded-lg hover:bg-blue-700 transition-colors">
                         Sell Tickets
                         </button>
                     </Link>

@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowBigRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 
 export default function Return(){
@@ -9,7 +9,7 @@ export default function Return(){
             <div>
                 <div>
                     {/* Success Header */}
-                    <div className="bg-gradient-to-r from-green-500 to-gray-600 p-6 text-white text-center">
+                    <div className="bg-gradient-to-b from-blue-500 to-rose-600 p-6 text-white text-center">
                         <div className="mb-4 flex justify-center">
                             <CheckCircle2 className="w-16 h-16" />
                         </div>
@@ -37,10 +37,10 @@ export default function Return(){
 
                             <Link 
                                 href="/seller"
-                                className="block w-full bg-blue-600 text-white text-center py-3 px-4 rounded-lg font-medium hover:bg-blue-700 transition-colors duration-200 items-center justify-center gap-2"
-                            >
+                                className="block w-full bg-blue-600 text-white text-center py-3 px-4 rounded-lg font-medium hover:bg-orange-700 transition-colors duration-200 flex items-center justify-center gap-2"
+                             >
                                 Go to Seller Dashboard
-                                <ArrowBigRight />
+                                <ArrowRight className="w-4 h-4"/>
                             </Link>
                         </div>
                     </div>
