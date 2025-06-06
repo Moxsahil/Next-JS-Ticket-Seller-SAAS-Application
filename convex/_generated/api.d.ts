@@ -9,6 +9,7 @@
  */
 
 import type * as constants from "../constants.js";
+import type * as crons from "../crons.js";
 import type * as events from "../events.js";
 import type * as storage from "../storage.js";
 import type * as tickets from "../tickets.js";
@@ -20,7 +21,6 @@ import type {
   FilterApi,
   FunctionReference,
 } from "convex/server";
-
 /**
  * A utility for referencing Convex functions in your app's API.
  *
@@ -31,6 +31,7 @@ import type {
  */
 declare const fullApi: ApiFromModules<{
   constants: typeof constants;
+  crons: typeof crons;
   events: typeof events;
   storage: typeof storage;
   tickets: typeof tickets;
@@ -86,74 +87,6 @@ export declare const components: {
         "internal",
         { before?: number },
         null
-      >;
-      rateLimit: FunctionReference<
-        "mutation",
-        "internal",
-        {
-          config:
-            | {
-                capacity?: number;
-                kind: "token bucket";
-                maxReserved?: number;
-                period: number;
-                rate: number;
-                shards?: number;
-              }
-            | {
-                capacity?: number;
-                kind: "fixed window";
-                maxReserved?: number;
-                period: number;
-                rate: number;
-                shards?: number;
-                start?: number;
-              };
-          count?: number;
-          key?: string;
-          name: string;
-          reserve?: boolean;
-          throws?: boolean;
-        },
-        { ok: true; retryAfter?: number } | { ok: false; retryAfter: number }
-      >;
-      resetRateLimit: FunctionReference<
-        "mutation",
-        "internal",
-        { key?: string; name: string },
-        null
-      >;
-    };
-    public: {
-      checkRateLimit: FunctionReference<
-        "query",
-        "internal",
-        {
-          config:
-            | {
-                capacity?: number;
-                kind: "token bucket";
-                maxReserved?: number;
-                period: number;
-                rate: number;
-                shards?: number;
-              }
-            | {
-                capacity?: number;
-                kind: "fixed window";
-                maxReserved?: number;
-                period: number;
-                rate: number;
-                shards?: number;
-                start?: number;
-              };
-          count?: number;
-          key?: string;
-          name: string;
-          reserve?: boolean;
-          throws?: boolean;
-        },
-        { ok: true; retryAfter?: number } | { ok: false; retryAfter: number }
       >;
       rateLimit: FunctionReference<
         "mutation",

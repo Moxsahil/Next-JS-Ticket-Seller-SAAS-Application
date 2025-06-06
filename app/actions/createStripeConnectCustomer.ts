@@ -22,7 +22,6 @@ export async function createStripeConnectCustomer() {
     throw new Error("Not authenticated");
   }
 
-  // Check if user already has a connect account
   const existingStripeConnectId = await convex.query(
     api.users.getUsersStripeConnectId,
     {
@@ -40,9 +39,6 @@ export async function createStripeConnectCustomer() {
     capabilities: {
       card_payments: { requested: true },
       transfers: { requested: true },
-      amazon_pay_payments: { requested: true},
-      // apple_pay: { requested: true },
-      // google_pay: { requested: true },
     },
   });
 

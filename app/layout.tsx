@@ -1,27 +1,23 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
-import { ClerkProvider } from "@clerk/nextjs";
-import { ConvexProviderWithClerk } from "convex/react-clerk";
-import { useAuth } from "@clerk/clerk-react";
-import { ConvexReactClient } from "convex/react";
 import { ConvexClientProvider } from "@/components/ConvexClientProvider";
 import Header from "@/components/Header";
+import { ClerkProvider } from "@clerk/nextjs";
 import SyncUserWithConvex from "@/components/SyncUserWithConvex";
-import { ThemeProvider } from "@/components/theme-provider"
+import { Toaster } from "@/components/ui/toaster";
+import { ThemeProvider } from "@/components/theme-provider";
 
-
-const geistSans = Geist({
+const geistSans = localFont({
+  src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
-  subsets: ["latin"],
+  weight: "100 900",
 });
-
-const geistMono = Geist_Mono({
+const geistMono = localFont({
+  src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: "100 900",
 });
-
-// const convex = new ConvexReactClient(process.env.NEXT_PUBLIC_CONVEX_URL!)
 
 export const metadata: Metadata = {
   title: "Moksy - Best place to buy tickets",
@@ -38,15 +34,16 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider>
         <ConvexClientProvider>
-        <ClerkProvider>
-          <Header />
-          <SyncUserWithConvex />
-            {/* <ConvexProviderWithClerk client={convex} useAuth={useAuth}> */}
+          <ClerkProvider>
+              <Header />
+            <SyncUserWithConvex />
+            <div className="pt-36">
               {children}
-            {/* </ConvexProviderWithClerk> */}
-        </ClerkProvider>
+            </div>
+            <Toaster />
+          </ClerkProvider>
         </ConvexClientProvider>
         </ThemeProvider>
       </body>

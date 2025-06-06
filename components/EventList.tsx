@@ -4,7 +4,7 @@ import { api } from "@/convex/_generated/api";
 import { useQuery } from "convex/react";
 import EventCard from "./EventCard";
 import Spinner from "./Spinner";
-import { CalendarDays, Ticket } from "lucide-react";
+import { CalendarDays, Divide, Ticket } from "lucide-react";
 
 export default function EventList() {
   const events = useQuery(api.events.get);
@@ -26,6 +26,7 @@ export default function EventList() {
     .sort((a, b) => b.eventDate - a.eventDate);
 
   return (
+    <div className="min-h-screen bg-gradient-to-r from-[#3494E6] to-[#EC6EAD] border-blue-200">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       {/* Header */}
       <div className="flex items-center justify-between mb-8">
@@ -35,8 +36,8 @@ export default function EventList() {
             Discover & book tickets for amazing events
           </p>
         </div>
-        <div className="bg-white px-4 py-2 rounded-lg shadow-sm border border-gray-100">
-          <div className="flex items-center gap-2 text-gray-600">
+        <div className="bg-blue-600 px-4 py-2 rounded-lg shadow-sm">
+          <div className="flex items-center gap-2 text-white">
             <CalendarDays className="w-5 h-5" />
             <span className="font-medium">
               {upcomingEvents.length} Upcoming Events
@@ -73,6 +74,7 @@ export default function EventList() {
           </div>
         </>
       )}
+    </div>
     </div>
   );
 }

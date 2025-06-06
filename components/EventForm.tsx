@@ -66,6 +66,7 @@ export default function EventForm({ mode, initialData }: EventFormProps) {
   const { toast } = useToast();
   const currentImageUrl = useStorageUrl(initialData?.imageStorageId);
 
+  // Image upload
   const imageInput = useRef<HTMLInputElement>(null);
   const [selectedImage, setSelectedImage] = useState<File | null>(null);
   const [imagePreview, setImagePreview] = useState<string | null>(null);
@@ -278,7 +279,7 @@ export default function EventForm({ mode, initialData }: EventFormProps) {
                 <FormControl>
                   <div className="relative">
                     <span className="absolute left-2 top-1/2 -translate-y-1/2">
-                      £
+                      ₹
                     </span>
                     <Input
                       type="number"
