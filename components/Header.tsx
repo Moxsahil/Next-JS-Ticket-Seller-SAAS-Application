@@ -2,7 +2,6 @@ import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
 import { ModeToggle} from "@/components/ToggleButton"
-import logo from "@/images/logo.png";
 import SearchBar from "./SearchBar";
 
 function Header() {
@@ -12,7 +11,7 @@ function Header() {
         <div className="flex items-center justify-between w-full lg:w-auto">
           <Link href="/" className="font-bold shrink-0">
             <Image
-              src={logo}
+              src="/images/logo.png"
               alt="logo"
               width={100}
               height={100}
